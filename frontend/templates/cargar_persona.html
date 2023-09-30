@@ -1,0 +1,14 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<div class="carga-grid">
+    <h1>Cargar archivos</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Subir Archivo</button>
+    </form>
+</div>
+{% endblock %}    

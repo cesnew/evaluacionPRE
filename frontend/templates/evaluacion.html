@@ -1,0 +1,21 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content%}
+<div class="content-grid">
+    <h1>Nueva Evaluación</h1>
+    <br>
+    <br>
+    <form action="{% url 'evaluacion' %}" id="evaForm" method="post">
+        {% csrf_token %}
+        <div class="form-control col sm:col-1/2">
+            <p>Nombre:</p>
+            <input class="form-field" name="nombre" type="text" autofocus required ><br><br>
+            <p>Fecha evaluacion:</p>
+            <input class="form-field" name="fecha_eva" type="date" required><br><br>
+            <p>Fecha PMYAC:</p>
+            <input class="form-field" name="fecha_pmyac" type="date" required><br><br>
+        </div>
+        <button>Crear</button>
+    </form>
+</div>
+{% endblock %}

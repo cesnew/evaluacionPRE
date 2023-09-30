@@ -1,0 +1,165 @@
+/* Estilo base para el cuerpo de la página */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+img{
+    width: 100%;
+}
+
+/* Estilo para el encabezado de la universidad */
+.university-header{
+    background-color: #ff0000; /* Color de fondo de la universidad */
+    color: white;
+    padding: 10px 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    width: 100%;
+}
+
+/* Estilo para el navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilo para el logo */
+.logo a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Estilo para los enlaces de navegación */
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff; /* Cambia el color al pasar el mouse sobre el enlace */
+}
+
+.logo img{
+    width: 150px;
+}
+
+/* Reset de estilos para el body y el footer */
+body, footer {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para la información de contacto */
+.contacto {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contacto h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contacto p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.logo img{
+    width: 150px;
+    display: flex;
+}
+
+.content-grid{
+    display: grid;
+    justify-items: center;
+    text-align: center;
+}
+
+.rec-grid{
+    display: grid;
+    border: 1px solid red;
+    gap: 1em;
+}
+
+.main-grid{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+/* Estilos para la tarjeta */
+.card {
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin: 10px;
+    display: inline-block;
+}
+
+.card{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.card:hover{
+    border: 1px solid black;
+}
+
+
+/* Estilos para el contenido de la tarjeta */
+.card-content {
+    padding: 20px;
+}
+
+/* Estilos para el título de la tarjeta */
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilos para la descripción de la tarjeta */
+.card-description {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.carga-grid{
+    display: grid;
+    justify-items: center;
+    text-align: center;
+}
