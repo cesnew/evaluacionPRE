@@ -1,0 +1,28 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h1>Resultado de Búsqueda</h1>
+
+<form method="GET">
+    <input type="text" name="q" placeholder="Buscar">
+    <button type="submit">Buscar</button>
+</form>
+
+<ul>
+    {% for resultado in resultados %}
+    <div class="card">
+        <div class="card-content">
+            <h2 class="card-title">{{resultado.id}}</h2>
+            <p class="card-description">{{resultado.nombre}}</p>
+            <p class="card-description">{{resultado.edad}}</p>
+            <p class="card-description"><a href="{{ resultado.archivo.url }}" target="_blank">{{ resultado.archivo }}</a></p>
+        </div>
+    </div> 
+    {% empty %}
+        <li>No se encontraron resultados.</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

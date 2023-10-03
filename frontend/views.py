@@ -7,6 +7,8 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 import requests
+from django.views.generic import ListView
+from django.db.models import Q
 
 
 # Create your views here.
@@ -117,3 +119,20 @@ def evaluacion(request):
     else:
         return render(request, 'evaluacion.html')       
 
+
+
+
+
+class BusquedaView(ListView):
+    model = Persona
+    template_name = 'resultado_busqueda.html'  # Nombre de tu plantilla HTML
+    context_object_name = 'resultados'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        if query:
+            return Persona.objects.filter(
+                Q(nombre__icontains=query) | Q(edad__icontains=query)
+            )
+        else:
+            return Persona.objects.all()

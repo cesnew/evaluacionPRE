@@ -2,6 +2,7 @@ from django.urls import path
 from frontend import views
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import BusquedaView
 
 
 urlpatterns = [
@@ -13,6 +14,7 @@ urlpatterns = [
     path('lista_personas', views.Lista, name='lista_personas'),
     path('obtener_pdf/<int:pdf_id>/', views.obtener_pdf, name='obtener_pdf'),
     path('evaluacion', views.evaluacion, name='evaluacion'),
+    path('buscar/', BusquedaView.as_view(), name='buscar'),
 ]
 
 if settings.DEBUG:
