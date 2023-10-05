@@ -10,24 +10,29 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-import os
+import os, environ
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
+# reading .env file
+environ.Env.read_env(env_file=os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-d$zfhqn+su3%m_w-tm9rdbhh7qlw9ekyccla2*4u(_vby5v&+k'
+SECRET_KEY = env.str('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -80,11 +85,11 @@ WSGI_APPLICATION = 'testpdf.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'NAME': 'pdftest',
-        'USER': 'root',
-        'PASSWORD': '123456789',
+        'HOST':     env.str('DB_HOST_MYSQL'),
+        'PORT':     env.str('DB_PORT_MYSQL'),
+        'NAME':     env.str('DB_NAME_MYSQL'),
+        'USER':     env.str('DB_USER_MYSQL'),
+        'PASSWORD': env.str('DB_PASS_MYSQL'),
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
         }
