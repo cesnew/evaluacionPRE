@@ -136,3 +136,9 @@ class BusquedaView(ListView):
             )
         else:
             return Persona.objects.all()
+        
+
+def detail(request, pk):
+    persona = get_object_or_404(Persona, pk=pk)
+    # print(pk)
+    return render(request, 'detail.html', {'persona': persona})

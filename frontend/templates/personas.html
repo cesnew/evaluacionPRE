@@ -3,22 +3,23 @@
 {% load static %}
 
 {% block content %}
-<div>
-    <h1>Recomendaciones</h1><br><br>
-    <a href="{% url 'cargar_persona' %}">Agregar recomendacion</a>
-</div>
-
-<div class="main-grid">
-    {% for persona in personas %}
-    <div class="card">
-        <div class="card-content">
-            <h2 class="card-title">{{persona.id}}</h2>
-            <p class="card-description">{{persona.nombre}}</p>
-            <p class="card-description">{{persona.edad}}</p>
-            <p class="card-description"><a href="{{ persona.archivo.url }}" target="_blank">{{ persona.archivo }}</a></p>
-        </div>
+<div class="container">
+    <div>
+        <h1>Recomendaciones</h1><br><br>
+        <a href="{% url 'cargar_persona' %}">Agregar recomendacion</a>
     </div>
-    {% endfor %}
+    
+    <div class="main-grid">
+        {% for persona in personas %}
+        <div class="card" style="width: 18em;">
+            <div class="card-content">
+                <h2 class="card-title">{{persona.id}}</h2>
+                <p class="card-description">{{persona.nombre}}</p>
+                <a href="{% url 'detail' pk=persona.pk %}">Detalle</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 
 {% endblock %}

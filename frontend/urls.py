@@ -15,6 +15,7 @@ urlpatterns = [
     path('obtener_pdf/<int:pdf_id>/',   views.obtener_pdf,      name='obtener_pdf'),
     path('evaluacion',                  views.evaluacion,       name='evaluacion'),
     path('buscar/',                     BusquedaView.as_view(), name='buscar'),
+    path('detail/<int:pk>/',                     views.detail,           name='detail'),
 ]
 
 if settings.DEBUG:

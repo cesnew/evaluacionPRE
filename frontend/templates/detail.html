@@ -1,0 +1,19 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="card" style="width: 18rem;">
+        <div class="card-header">
+          Featured
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{ persona.id }}</li>
+          <li class="list-group-item">{{ persona.edad }}</li>
+          <li class="list-group-item"><a href="{{ persona.archivo.url }}" target="_blank">{{ persona.archivo }}</a>
+          </li>
+        </ul>
+      </div>
+</div>
+
+{% endblock %}
